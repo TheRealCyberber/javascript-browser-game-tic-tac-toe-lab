@@ -91,14 +91,24 @@ const checkForWinner = () => {
     };
 
 const checkForTie = () => {
-    if (!winner && !board.includes('')) {
-        tie = true;
-    }
-};
+  if (winner) {
+    return;
+      }
+    
+  if (!board.includes('')) {
+      tie = true;
+      }
+    };
 
 const switchPlayerTurn = () => {
-    if (winner) return;
-    turn = turn === 'X' ? 'O' : 'X';
+  if (winner) {
+    return;
+  }
+  if (turn === 'X') {
+    turn = 'O';
+  } else {
+    turn = 'X';
+  }
 };
 
 /*----------------------------- Event Listeners -----------------------------*/
